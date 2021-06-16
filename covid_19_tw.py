@@ -4,7 +4,7 @@ import json
 
 
 def query_case_by_date():
-    day = input("查詢日期: (格式 YYYYMMDD)")
+    day = input("查詢日期: (格式 YYYY/MM/DD)")
 
     # 開放資料連結
     url = 'https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json'
@@ -35,9 +35,7 @@ def query_case_by_date():
             # 縣市dictionary 加1. get那個是取之前的值 沒有的話就從0開始
             covid_city_dictionary[city] = covid_city_dictionary.get(city, 0) + 1
 
-    # numbers=[]
-    # cities=[]
-    print(f'今日確診人數:{covid_total}人')
+    print(f'確診人數:{covid_total}人')
     print('各地區確診人數:')
     # loop剛剛的縣市案例dictionary sorted(covid_city_dictionary.items(), key=lambda e:e[1], reverse=True)
     for city, number in sorted(covid_city_dictionary.items(), key=lambda e:e[1], reverse=True):
