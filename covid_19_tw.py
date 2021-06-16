@@ -19,7 +19,7 @@ def query_case_by_date():
     data = json.loads(response.text)
     # data裡面包含所有案例
     print('OVID-19確診人數:')
-    print(day[0:4] + '年' + day[4:6] + '月' + day[6:8] + '日')
+    print(day)
     covid_total = 0
     # 縣市的案例dictionary
     covid_city_dictionary = {}
